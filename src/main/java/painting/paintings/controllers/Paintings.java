@@ -1,9 +1,15 @@
 package painting.paintings.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import painting.paintings.DTO.ArtistDTO;
+import painting.paintings.models.Artist;
 import painting.paintings.models.Painting;
+import painting.paintings.repositories.ArtistRepository;
 import painting.paintings.repositories.PaintingRepository;
 import java.util.List;
 
@@ -13,6 +19,10 @@ public class Paintings {
 
     @Autowired
     PaintingRepository paintings;
+
+    @Autowired
+    ArtistRepository artists;
+
 
     @GetMapping("/paintings")
     public Iterable<Painting> getPainting() {
@@ -36,8 +46,19 @@ public class Paintings {
     }
 
     @PostMapping("/paintings")
-    public Painting addPainting(@RequestBody Painting newPainting) {
-        return paintings.save(newPainting);
+    public Painting addPainting(@RequestBody String body) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+
+        Painting paintingToCreate = mapper.readValue(body, Painting.class);
+
+        Iterable<Long> artistsIds = mapper.readValue(body, ArtistDTO.class).artistsIds;
+
+        List<Artist> foundArtists = (List<Artist>) artists.findAllById(artistsIds);
+
+        paintingToCreate.setArtists(foundArtists);
+
+        return paintings.save(paintingToCreate);
     }
 
     @PutMapping("/paintings/{id}")
@@ -50,7 +71,7 @@ public class Paintings {
     public String patchPaintingById(@PathVariable Long id, @RequestBody Painting paintingToUpdateWith) {
         return paintings.findById(id).map(foundPainting -> {
             if (paintingToUpdateWith.getArtist() != null) foundPainting.setArtist(paintingToUpdateWith.getArtist());
-            if (paintingToUpdateWith.getPrices() != 0) foundPainting.setPrices(paintingToUpdateWith.getPrices());
+            if (paintingToUpdateWith.getPrice() != 0) foundPainting.setPrice(paintingToUpdateWith.getPrice());
             if (paintingToUpdateWith.getTitle() != null) foundPainting.setTitle(paintingToUpdateWith.getTitle());
             if (paintingToUpdateWith.getGenre() != null) foundPainting.setGenre(paintingToUpdateWith.getGenre());
             if (paintingToUpdateWith.getYear() != 0) foundPainting.setYear(paintingToUpdateWith.getYear());

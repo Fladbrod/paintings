@@ -29,7 +29,10 @@ public class Gallery {
 
     // Lazy henter ikke alle artists, men kun dem man har brug for, FetchType.EAGER henter alle relationer ud
     // CascadeType
+    //JsonIgnore gør at der ikke kommer infinitive recursion i f.eks postman, hvor den bliver ved med at spytte data ud på get request.
+    //
     @JsonIgnore
     @OneToMany(mappedBy = "gallery", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Artist> artists;
+
 }

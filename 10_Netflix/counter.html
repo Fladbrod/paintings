@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie clicker</title>
+</head>
+<body>
+<h1>Click the cookie</h1>
+<button id="click-btn">Click</button>
+
+<div id="click-counter"></div>
+
+<script>
+    let counter = 0;
+    const clickButton = document.getElementById("click-btn");
+
+    clickButton.addEventListener("mouseover", () => {
+        // console.log("Ar yer bout to click de button moite??");
+    });
+
+    // => Shorthand for at skrive function [navn]()
+    // i "click" kan du også have f.eks mouseover som trigger functionen når du hover over knappen
+    clickButton.addEventListener("click", buttonClicked);
+
+    function buttonClicked() {
+        counter++;
+        // console.log("This button was clicked", counter, "times");
+
+        const paragraph = document.createElement("p");
+        paragraph.innerText = "You've clicked the button " + counter + " times.";
+        paragraph.style.color = "magenta";
+
+        const counterWrapper = document.getElementById("click-counter");
+
+        counterWrapper.prepend(paragraph);
+    }
+
+</script>
+
+</body>
+</html>
