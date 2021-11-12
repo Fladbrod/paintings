@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists</title>
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link rel="stylesheet" type="text/css" href="./artists.css">
+    <script src="../lib/HTMLEscape.js"></script>
+</head>
+<body>
+
+<div id="featured-artists-wrapper">
+
+    <input id="create-artist-name" type="text" placeholder="name">
+    <input id="create-artist-age" min="0" max="100" type="number" placeholder="age">
+    <input id="create-artist-image" placeholder="image url">
+    <select id="create-artist-gender">
+        <option>MALE</option>
+        <option>FEMALE</option>
+        <option>OTHER</option>
+    </select>
+
+    <button id="create-artist-button">Create a new artist</button>
+
+</div>
+
+<nav>
+    <a href="../frontpage/index.html">
+        <img class="logo" src="../art_logo.png" alt="logo">
+    </a>
+
+    <a href="../frontpage/index.html">
+        <h3>Frontpage</h3>
+    </a>
+    <a href="../galleries/galleries.html">
+        <h3>Galleries</h3>
+    </a>
+    <a href="../paintings/paintings.html">
+        <h3>paintings</h3>
+    </a>
+</nav>
+
+<div id="featured-artists"></div>
+<script src="artists.js"></script>
+
+</body>
+</html>

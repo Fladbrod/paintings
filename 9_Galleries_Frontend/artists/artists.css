@@ -1,0 +1,20 @@
+#featured-artists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    border: solid black 1px;
+}
+
+.cardinfo {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.cardimage img{
+    width: 10rem;
+    height: 10rem;
+}
