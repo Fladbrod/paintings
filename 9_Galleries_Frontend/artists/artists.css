@@ -1,7 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Road+Rage&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Lobster&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Courgette&family=Lobster&family=Staatliches&display=swap');
+
 #featured-artists {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+.logo {
+    color: white;
+    font-size: 40px;
+    padding: 0 50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-family: 'Hurricane', cursive;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: black;
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    margin: auto;
+    position: fixed;
+    letter-spacing: 2px;
+    z-index: 2;
+    padding: 20px;
+
+}
+
+.nav-bar {
+    float: right;
+    display: flex;
+
+}
+
+.nav-bar a{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 50px;
+    text-decoration: none;
+    font-family: 'Staatliches', cursive;
+    padding: 0 20px;
+
+}
+
+.nav-bar a:hover{
+    background-color: rosybrown;
+    background-size: cover;
+
+}
+
+
+.banner{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../global/10(drawing-building).jpeg") ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+
+}
+.card-container{
+    display: grid;
+    grid-template-columns: 420px 420px;
+
+}
+.card-img{
+    background: url("../global/12(kiddrawing).jpeg") center/cover no-repeat;
+
+}
+.banner h1{
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-family: 'Staatliches', cursive;
+    color: white;
+    animation: type 2s steps(15);
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+@keyframes type {
+    0% {
+        width: 0ch;
+    }
+    100% {
+        width:15ch;
+    }
+    
+}
+#featured-artists-wrapper{
+    background: white;
+    height: 360px;
+
+}
+#featured-artists-wrapper h2{
+    text-align: center;
+    padding: 0 0 10px 0;
+    color: black;
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+
+.form-row{
+    width: 90% ;
+    margin: 0 auto;
+
+}
+
+.form-row input{
+    display: block;
+    width: 90%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-family: 'Lobster', cursive;
+    font-size: 18px;
+    border-width: 3px;
+    justify-content: center;
+}
+#create-artist-gender{
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    color: white;
+    background: black;
+
+}
+#create-artist-button{
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    background: palegreen;
+    border-style: none;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#create-artist-button:hover{
+    background: #69ee69;
 }
 
 .card {
@@ -18,3 +182,44 @@
     width: 10rem;
     height: 10rem;
 }
+.form-div{
+    position: relative;
+    height: 48px;
+    margin-bottom: 1.5rem;
+    font-family: 'Lobster', cursive;
+}
+
+.form-input{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    border-radius: .5rem;
+    border: 1px solid;
+    border-color: seagreen;
+    outline: none;
+    padding: 2rem;
+    background: none;
+    z-index: 1;
+
+}
+
+.form-label{
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+    padding: 0 .25rem;
+    transition: .3s;
+    pointer-events: none;
+}
+
+
+.form-input:focus + .form-label,
+.form-input:valid + .form-label {
+    top: -.5rem;
+    left: .8rem;
+    color: black;
+}
+
+
+

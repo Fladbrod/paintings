@@ -15,6 +15,7 @@ function createArtist() {
     const image = document.getElementById("create-artist-image").value;
     const gender = document.getElementById("create-artist-gender").value;
 
+
     const newArtist = {
         name: name,
         age: Number(age),

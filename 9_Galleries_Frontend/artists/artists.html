@@ -3,18 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Artists</title>
-    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link rel="stylesheet" href="../global/global.css">
     <link rel="stylesheet" type="text/css" href="./artists.css">
     <script src="../lib/HTMLEscape.js"></script>
 </head>
 <body>
 
-<div id="featured-artists-wrapper">
+<nav>
+    <a href="../frontpage/index.html" style="text-decoration: none"><label class="logo">ArTGa</label></a>
+    <div class="nav-bar">
+        <a href="../artists/artists.html">Artists</a>
+        <a href="../paintings/paintings.html">Paintings</a>
+        <a href="../galleries/galleries.html">Galleries</a>
+    </div>
+</nav>
 
-    <input id="create-artist-name" type="text" placeholder="name">
-    <input id="create-artist-age" min="0" max="100" type="number" placeholder="age">
-    <input id="create-artist-image" placeholder="image url">
+
+<section class="banner">
+    <h1>Register Artist</h1>
+
+    <div class="card-container">
+        <div class="card-img"></div>
+
+    <div id="featured-artists-wrapper">
+
+        <h2>INFORMATION</h2>
+
+
+    <div class="form-row">
+    <div class="form-div">
+        <input id="create-artist-name"  class="form-input" type="text" placeholder="">
+        <label for="create-artist-name" class="form-label">Full Name</label>
+    </div>
+    <div class="form-div">
+        <input id="create-artist-age" min="0" max="100"  class="form-input" type="number" placeholder="">
+        <label for="create-artist-age" class="form-label">Age</label>
+    </div>
+    <div class="form-div">
+        <input id="create-artist-image" class="form-input" placeholder="">
+        <label for="create-artist-age" class="form-label">Image Url</label>
+    </div>
+
     <select id="create-artist-gender">
+        <option selected disabled>GENDER</option>
         <option>MALE</option>
         <option>FEMALE</option>
         <option>OTHER</option>
@@ -22,23 +53,12 @@
 
     <button id="create-artist-button">Create a new artist</button>
 
-</div>
+    </div><!---end form row--->
 
-<nav>
-    <a href="../frontpage/index.html">
-        <img class="logo" src="../art_logo.png" alt="logo">
-    </a>
+    </div><!---end featured-artists-wrapper--->
+</div><!---end card-container--->
+</section><!---end section banner--->
 
-    <a href="../frontpage/index.html">
-        <h3>Frontpage</h3>
-    </a>
-    <a href="../galleries/galleries.html">
-        <h3>Galleries</h3>
-    </a>
-    <a href="../paintings/paintings.html">
-        <h3>paintings</h3>
-    </a>
-</nav>
 
 <div id="featured-artists"></div>
 <script src="artists.js"></script>

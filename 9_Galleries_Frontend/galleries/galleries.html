@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./galleries.css">
-    <link rel="stylesheet" href="../global.css">
-    <script src="../global.js"></script>
+    <link rel="stylesheet" href="../global/global.css">
+    <script src="../global/global.js"></script>
     <script src="../lib/HTMLEscape.js"></script>
     <title>Galleries</title>
 </head>
 <body>
+
 <nav>
-    <a href="../frontpage/index.html">
-        <img id="logo" src="../art_logo.jpeg" alt="logo art">
-    </a>
-    <a href="../artists/artists.html">Artists</a>
-    <a href="../paintings/paintings.html">Paintings</a>
-    <a href="../galleries/galleries.html">Galleries</a>
+    <a href="../frontpage/index.html" style="text-decoration: none"><label class="logo">ArTGa</label></a>
+    <div class="nav-bar">
+        <a href="../artists/artists.html">Artists</a>
+        <a href="../paintings/paintings.html">Paintings</a>
+        <a href="../galleries/galleries.html">Galleries</a>
+    </div>
 </nav>
 
-<button id="expand-gallery-form">Gallery ➕</button>
+<div class="background-galleries">
+<img src="../global/11(paintingwall).jpeg" alt="#">
+<div class="overlay"></div>
+</div>
+
+
+<div class="insert-info-gallery">
+
+<button id="expand-gallery-form">Add Gallery </button>
+
 <div id="create-gallery-form"></div>
 
+
+</div><!---end insert-info-gallery--->
+
+<div class="header-fixed">
+<div class="insertinfo-box">
 <table>
     <thead>
     <tr>
@@ -36,6 +51,10 @@
 
     </tbody>
 </table>
+
+</div><!---end insertInfo-box--->
+</div><!---end header-fixed--->
+
 
 <script src="./galleries.js"></script>
 <script src="./galleriesCreate.js"></script>
